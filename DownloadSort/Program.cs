@@ -44,7 +44,7 @@ class Program
                     Console.Clear();
                     Console.CursorVisible = true;
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("\n   DOWNLOAD SORTER\n");
+                    Console.WriteLine("\n   SortIO\n");
                     Console.ResetColor();
 
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -137,12 +137,12 @@ class Menu
     {
         Console.Clear();
         Console.CursorVisible = true;
-        Console.Title = "Download Sorter | Menu";
+        Console.Title = "SortIO | Menu";
 
         Console.WriteLine();
 
         Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("   DOWNLOAD SORTER\n");
+        Console.WriteLine("   SortIO\n");
         Console.ResetColor();
 
         WriteSectionHeader("Main");
@@ -195,7 +195,7 @@ class Sorter
     {
         Console.Clear();
         Console.CursorVisible = false;
-        Console.Title = "Download Sorter | Sorter";
+        Console.Title = "SortIO | Sorter";
 
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("\n   SORT FILES\n");
@@ -278,7 +278,7 @@ class Unziper
     {
         Console.Clear();
         Console.CursorVisible = false;
-        Console.Title = "Download Sorter | Unzipper";
+        Console.Title = "SortIO | Unzipper";
 
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("\n   UNZIP & SORT\n");
@@ -303,7 +303,7 @@ class Statistics
     {
         Console.Clear();
         Console.CursorVisible = false;
-        Console.Title = "Download Sorter | Statistics";
+        Console.Title = "SortIO | Statistics";
 
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("\n   STATISTICS\n");
@@ -330,7 +330,7 @@ class Paths
     {
         Console.Clear();
         Console.CursorVisible = false;
-        Console.Title = "Download Sorter | Paths";
+        Console.Title = "SortIO | Paths";
 
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("\n   SYSTEM PATHS\n");
