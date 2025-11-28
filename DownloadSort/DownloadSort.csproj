@@ -1,14 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
+  <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	<Version>1.0.0</Version>
-    <AssemblyTitle>SortIO</AssemblyTitle>
-    <Product>SortIO</Product>
-    <Company>SortIO</Company>
+    <Version>1.0.0</Version>
   </PropertyGroup>
-
 </Project>
