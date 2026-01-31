@@ -23,6 +23,12 @@ It automatically moves files into the appropriate system folders based on their 
 
 > Note: removed nested `DownloadSort/DownloadSort.sln` to avoid confusion.
 
+## Developer setup
+
+- Make sure that the .NET SDK is installed and available on your PATH. On macOS, this is typically at `/usr/local/share/dotnet`.
+- If VS Code shows the message "/bin/sh: dotnet: command not found", restart VS Code after you updated your shell profile (e.g. add `export PATH="$PATH:/usr/local/share/dotnet"` to `~/.zprofile` or launch VS Code from a terminal using `code .` so it inherits your shell PATH).
+- This repository workspace also hides `bin/`, `obj/` and `publish/` in the Explorer via `.vscode/settings.json` to avoid distracting highlighting.
+
 ## Usage
 
 ### Run from source

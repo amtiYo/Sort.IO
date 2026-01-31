@@ -1,0 +1,11 @@
+{
+  // Explicit path where the system dotnet is located on macOS (helps VS Code extensions find it)
+  "dotnet.defaultRuntimePath": "/usr/local/share/dotnet",
+
+  // Hide build output folders from the explorer so they are not visually distracting
+  "files.exclude": {
+    "**/bin": true,
+    "**/obj": true,
+    "**/publish": true
+  }
+}
