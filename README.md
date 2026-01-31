@@ -16,6 +16,13 @@ It automatically moves files into the appropriate system folders based on their 
 
 ---
 
+## Project structure
+
+- `DownloadSort.sln` — solution at the repository root (open this in your IDE)
+- `DownloadSort/` — project sources and `DownloadSort.csproj`
+
+> Note: removed nested `DownloadSort/DownloadSort.sln` to avoid confusion.
+
 ## Usage
 
 ### Run from source
