@@ -6,6 +6,20 @@
   "files.exclude": {
     "**/bin": true,
     "**/obj": true,
-    "**/publish": true
+    "**/publish": true,
+    "**/.idea": true,
+    ".vscode": true,
+    "global.json": true,
+    "*.sln": true
+  },
+  "search.exclude": {
+    "**/.idea": true,
+    "**/.vscode": true,
+    "global.json": true,
+    "**/*.sln": true
+  },
+  "files.watcherExclude": {
+    "**/bin/**": true,
+    "**/obj/**": true
   }
 }
