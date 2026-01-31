@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
 using Microsoft.VisualBasic.FileIO;
+using System.Text.Json;
 
 namespace DownloadSort;
 
@@ -17,6 +18,7 @@ class Program
         Unziper unzipper = new Unziper();
         Statistics statistics = new Statistics();
         Paths paths = new Paths();
+        StatsData stats = StatsManager.Load();
 
         while (true)
         {
@@ -231,11 +233,14 @@ class Menu
 
 class Sorter
 {
+    private StatsData stats;
     public void Run()
     {
         Console.Clear();
         Console.CursorVisible = false;
         Console.Title = "SortIO | Sorter";
+
+        stats = StatsManager.Load();
 
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("\n   SORT FILES\n");
@@ -405,6 +410,8 @@ class Sorter
         try
         {
             File.Move(originalFile, destFile);
+            stats.TotalSorted++;
+            StatsManager.Save(stats);
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"   [MOVED] {fileName} -> {folderName}");
             Console.ResetColor();
@@ -492,8 +499,9 @@ class Statistics
         Console.WriteLine("\n   STATISTICS\n");
         Console.ResetColor();
 
-        Console.ForegroundColor = ConsoleColor.DarkGray;
-        Console.WriteLine("   This feature is in progress.");
+        StatsData stats = StatsManager.Load();
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine($"   Files sorted total: {stats.TotalSorted}");
         Console.ResetColor();
 
         Console.WriteLine();
@@ -502,6 +510,34 @@ class Statistics
         Console.ResetColor();
         Console.CursorVisible = true;
         Console.ReadLine();
+    }
+}
+
+class StatsData
+{
+    public int TotalSorted { get; set; } = 0;
+
+
+}
+
+static class StatsManager
+{
+    private static string filePath = Path.Combine(PathsConfig.Documents, "sortio_stats.json");
+
+    public static void Save(StatsData data)
+    {
+        string json = JsonSerializer.Serialize(data);
+        File.WriteAllText(filePath, json);
+    }
+
+    public static StatsData Load()
+    {
+        if (!File.Exists(filePath))
+        {
+            return new StatsData();
+        }
+        string json = File.ReadAllText(filePath);
+        return JsonSerializer.Deserialize<StatsData>(json);
     }
 }
 
